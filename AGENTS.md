@@ -1,211 +1,234 @@
 # AGENTS.md
-# AI Coding Agent Instructions — SI CDC UKRI
+# AI CODING AGENT GUIDELINES - SI CDC UKRI
 
-## 1. Project Identity
+## 1. Project Overview
 
-Project Name: Sistem Informasi Career Development Center (SI CDC) UKRI.
+You are assisting with the development of:
 
-Institution: Universitas Kebangsaan Republik Indonesia.
+**Project Name:** Sistem Informasi Career Development Center (SI CDC UKRI)
 
-Project Type: Web-Based Information System.
+**Institution:** Universitas Kebangsaan Republik Indonesia
 
-Project Purpose:
-Mengembangkan sistem informasi Career Development Center untuk menghubungkan mahasiswa, alumni, universitas, dan Dunia Usaha Dunia Industri (DUDI) dalam layanan pengembangan karier, pengelolaan portofolio, lowongan pekerjaan, kemitraan industri, dan tracer study.
+**Repository:** https://github.com/ilyasfauzi-cyber/SI-CDC-UKRI
 
-Seluruh pengembangan harus mengacu pada dokumen KAK, Project Plan, dan SRS yang tersedia di direktori `docs/`.
+SI CDC UKRI is a Career Development Center information system designed to support student and alumni career development, job vacancy management, industry partnerships, and alumni tracer studies.
+
+Your responsibility is to assist the development team while preserving the project's existing architecture, requirements, and coding standards.
 
 ## 2. Technology Stack
 
-Gunakan teknologi berikut:
+The project uses the following technologies:
 
 - Backend: Laravel (PHP).
 - Frontend: Blade.
 - CSS Framework: Tailwind CSS.
 - Database: MySQL.
 - Local Development Environment: Laragon.
-- Version Control: Git.
-- Repository Hosting: GitHub.
+- Version Control: Git and GitHub.
 
-Jangan mengganti teknologi utama tanpa persetujuan pemilik proyek.
+Do not introduce a different framework or technology without explicit approval from the Project Leader.
 
-## 3. System Actors and Roles
+Do not assume a specific Laravel, PHP, or Node.js version. Inspect the existing project configuration first.
 
-Sistem memiliki lima aktor utama:
+## 3. Main System Modules
 
-### Super Admin
-- Mengelola akun administrator.
-- Mengelola role dan hak akses.
-- Mengelola konfigurasi sistem.
-- Melihat log aktivitas.
+The application consists of three main modules:
 
-### Admin CDC
-- Mengelola data mahasiswa dan alumni.
-- Mengelola data mitra DUDI.
-- Memverifikasi akun mitra.
-- Memverifikasi lowongan pekerjaan.
-- Memverifikasi data portofolio.
-- Mengelola promosi talenta.
-- Mengakses laporan dan analitik.
+### A. Talent Profile & Portfolio
+- Student and alumni profiles.
+- Educational background.
+- Skills and competencies.
+- Work experience.
+- Portfolio management.
 
-### Perwakilan DUDI
-- Melakukan registrasi mitra.
-- Mengelola profil perusahaan.
-- Mengelola lowongan pekerjaan dan magang.
-- Melihat dan meninjau lamaran.
+### B. Job Vacancies & DUDI Partnerships
+- Job vacancy management.
+- Company and DUDI information.
+- Industry partnership management.
+- Job information for students and alumni.
 
-### Mahasiswa dan Alumni
-- Login dan mengelola profil.
-- Mengelola portofolio.
-- Mengunggah sertifikat dan pengalaman.
-- Membuat serta mengunduh CV digital.
-- Mencari dan melamar pekerjaan.
-- Melacak status lamaran.
-- Mengelola persetujuan penggunaan data pribadi.
-- Mengisi tracer study sesuai ketentuan sistem.
+### C. Analytics & Tracer Study
+- Alumni tracer study.
+- Career development information.
+- Data management and reporting.
+- Analytics and dashboard information.
 
-### Pimpinan Universitas
-- Melihat dashboard analitik.
-- Melihat laporan tracer study.
-- Memiliki hak akses read-only.
+Follow the existing project documentation for detailed requirements. Do not invent functionality that has not been approved.
 
-## 4. Main System Modules
+## 4. User Roles
 
-Pengembangan sistem dibagi menjadi tiga modul:
+The system is designed for five user categories:
 
-### Module A: Profil dan Portofolio Talenta
-Mencakup pengelolaan profil, portofolio, sertifikat, pengalaman, verifikasi data, dan CV digital.
+1. Super Admin.
+2. Admin CDC.
+3. DUDI Representative.
+4. Student / Alumni.
+5. University Leadership.
 
-### Module B: Lowongan dan Kemitraan DUDI
-Mencakup pengelolaan mitra, lowongan pekerjaan, lowongan magang, pencarian pekerjaan, lamaran, pelacakan lamaran, dan promosi talenta.
+Respect role-based permissions. Never allow users to access data or functionality outside their authorized roles.
 
-### Module C: Analitik dan Tracer Study
-Mencakup pengumpulan data tracer study, pengolahan data alumni, dashboard, dan laporan keterserapan alumni.
+## 5. Documentation Priority
 
-## 5. Development Rules
+Before implementing a feature, inspect the available project documentation.
 
-AI coding agent wajib mengikuti aturan berikut:
+Prioritize the following sources:
 
-1. Baca dokumentasi proyek sebelum mengerjakan fitur.
-2. Jangan membuat fitur di luar ruang lingkup tanpa persetujuan.
-3. Jangan mengubah kebutuhan sistem secara sepihak.
-4. Kerjakan fitur secara bertahap.
-5. Gunakan penamaan variabel, class, function, dan file yang konsisten.
-6. Hindari kode duplikat.
-7. Gunakan prinsip modular dan mudah dipelihara.
-8. Jangan menghapus kode yang sudah berfungsi tanpa alasan jelas.
-9. Jangan mengubah konfigurasi penting tanpa persetujuan.
-10. Dokumentasikan perubahan yang signifikan.
+1. Kerangka Acuan Kerja (KAK).
+2. Software Requirements Specification (SRS).
+3. Project Plan.
+4. Gantt Chart.
+5. `README.md`.
+6. `RULES.md`.
 
-## 6. Database Rules
+If documentation is inconsistent or a requirement is unclear, report the discrepancy to the user or Project Leader before making a significant implementation decision.
 
-- Gunakan MySQL.
-- Gunakan Laravel Migration untuk mengelola struktur database.
-- Gunakan Eloquent ORM untuk interaksi database.
-- Terapkan foreign key dan relasi yang sesuai.
-- Hindari penyimpanan data yang tidak diperlukan.
-- Gunakan validasi pada setiap input.
-- Jangan menyimpan password dalam bentuk teks biasa.
-- Perhatikan integritas dan konsistensi data.
+Do not silently change approved project requirements.
 
-## 7. Security and Privacy
+## 6. Development Principles
 
-Keamanan merupakan bagian penting dari sistem.
+Follow these principles:
 
-Wajib memperhatikan:
+- Inspect the existing code before making changes.
+- Preserve the existing Laravel architecture.
+- Use Laravel conventions and best practices.
+- Write clean, readable, and maintainable code.
+- Avoid unnecessary dependencies.
+- Reuse existing components and functions where appropriate.
+- Keep changes focused on the requested task.
+- Do not delete existing functionality without approval.
+- Do not overwrite existing files without understanding their purpose.
 
-- Role-Based Access Control (RBAC).
-- Password hashing.
-- Validasi dan sanitasi input.
-- Proteksi terhadap SQL Injection.
-- Proteksi terhadap Cross-Site Scripting (XSS).
-- Proteksi terhadap Cross-Site Request Forgery (CSRF).
-- Penggunaan HTTPS pada deployment.
-- Log aktivitas dan audit.
-- Persetujuan pengguna sebelum data pribadi dibagikan kepada mitra DUDI.
-- Mekanisme penarikan persetujuan (revoke consent).
+## 7. Backend Guidelines
 
-Jangan pernah memasukkan password, API key, token, atau informasi rahasia ke repository.
+When developing backend functionality:
 
-## 8. UI/UX Guidelines
+- Use Laravel MVC architecture.
+- Use Controllers to handle application requests.
+- Use Models for database interactions.
+- Use Migrations for database structure changes.
+- Use Seeders for development and testing data.
+- Use Form Requests or appropriate validation mechanisms.
+- Apply authentication and authorization where required.
+- Use Eloquent ORM where appropriate.
+- Handle errors and exceptions properly.
+- Avoid exposing sensitive information in responses.
 
-- Gunakan desain profesional dan konsisten.
-- Gunakan Tailwind CSS.
-- Buat tampilan responsif untuk desktop dan mobile.
-- Gunakan navigasi yang mudah dipahami.
-- Sesuaikan dashboard berdasarkan role pengguna.
-- Gunakan komponen antarmuka yang dapat digunakan kembali.
-- Berikan feedback untuk aksi berhasil, gagal, dan proses loading.
+Do not modify production data or perform destructive database operations without explicit approval.
 
-## 9. Testing Rules
+## 8. Frontend Guidelines
 
-Setiap fitur yang dikembangkan harus diuji.
+When developing frontend functionality:
 
-Pengujian meliputi:
+- Use Blade templates.
+- Use Tailwind CSS for styling.
+- Create reusable components where appropriate.
+- Maintain a consistent interface across pages.
+- Make interfaces responsive for desktop, tablet, and mobile.
+- Use clear labels, forms, buttons, and navigation.
+- Provide validation feedback and useful error messages.
+- Follow the existing design system if one has already been established.
 
-- Validasi input.
-- Pengujian autentikasi.
-- Pengujian hak akses berdasarkan role.
-- Pengujian proses utama setiap fitur.
-- Pengujian integrasi database.
-- Pengujian tampilan responsif.
+Do not introduce another frontend framework without approval.
 
-Jangan menyatakan fitur selesai jika belum diuji.
+## 9. Database Guidelines
 
-## 10. GitHub Workflow
+- Use MySQL as the primary database.
+- Follow Laravel migration conventions.
+- Use appropriate primary and foreign keys.
+- Maintain referential integrity.
+- Use appropriate indexes where necessary.
+- Avoid duplicate and inconsistent data.
+- Never hardcode database credentials.
+- Keep database configuration in `.env`.
 
-Setiap pekerjaan harus terhubung dengan GitHub Issues jika Issues sudah tersedia.
+Before changing database structure, inspect the existing migrations and related models.
 
-Aturan:
+## 10. Security Guidelines
 
-- Gunakan branch terpisah untuk pekerjaan yang cukup besar.
-- Gunakan commit message yang jelas.
-- Hindari commit file konfigurasi rahasia.
-- Jangan langsung mengubah branch utama tanpa memperhatikan aturan kolaborasi tim.
-- Perbarui dokumentasi jika terjadi perubahan sistem.
+Security must be considered in every implementation.
 
-Contoh commit:
+- Validate all user input.
+- Apply authorization checks.
+- Protect sensitive information.
+- Use secure password hashing.
+- Avoid SQL injection vulnerabilities.
+- Prevent unauthorized access.
+- Do not expose API keys, passwords, or tokens.
+- Never commit `.env` files or real credentials.
+- Follow Laravel security conventions.
 
-- `feat: add user authentication`
-- `feat: add student profile management`
-- `fix: correct application status validation`
-- `docs: update system documentation`
-- `test: add authentication tests`
+## 11. Git and Collaboration Guidelines
 
-## 11. AI Agent Working Procedure
+Follow the repository's `RULES.md`.
 
-Sebelum mengerjakan tugas:
+The team uses:
 
-1. Periksa dokumentasi terkait.
-2. Periksa struktur repository.
-3. Pahami kebutuhan fitur.
-4. Identifikasi file yang perlu dibuat atau diubah.
-5. Jelaskan rencana pengerjaan.
-6. Implementasikan perubahan.
-7. Jalankan pengujian yang relevan.
-8. Laporkan hasil pekerjaan dan file yang berubah.
+- `main` for stable releases.
+- `develop` for integration.
+- `feature/*` for individual feature development.
 
-Jangan langsung mengerjakan perubahan besar tanpa menjelaskan rencananya.
+Never push directly to `main` or `develop` unless explicitly authorized.
 
-## 12. Important Restrictions
+Do not create commits, push branches, merge Pull Requests, or rewrite Git history without user authorization.
 
-- Jangan mengganti Laravel, Blade, Tailwind CSS, atau MySQL tanpa persetujuan.
-- Jangan mengarang kebutuhan sistem yang tidak tercantum dalam dokumen.
-- Jangan menghapus data atau tabel tanpa persetujuan.
-- Jangan melakukan deployment tanpa persetujuan.
-- Jangan mengklaim pengujian berhasil jika belum dijalankan.
-- Jika terdapat konflik antar dokumen, laporkan konflik dan minta keputusan sebelum mengubah kebutuhan.
+Use clear and consistent commit messages following Conventional Commits.
 
-## 13. Documentation Priority
+## 12. Testing and Quality Assurance
 
-Gunakan sumber berikut sebagai acuan:
+After implementing a feature:
 
-1. KAK SI CDC UKRI untuk ruang lingkup dan tujuan proyek.
-2. SRS SI CDC UKRI untuk kebutuhan perangkat lunak.
-3. Project Plan untuk tahapan dan pembagian pekerjaan.
-4. Gantt Chart untuk jadwal pengerjaan.
+1. Review the modified code.
+2. Check for syntax errors.
+3. Run relevant tests if available.
+4. Verify database migrations when applicable.
+5. Check authorization and validation.
+6. Verify that existing functionality is not broken.
+7. Report any tests that could not be executed.
 
-Jika terdapat perbedaan informasi, jangan mengambil keputusan sendiri. Laporkan perbedaannya terlebih dahulu.
+Use the project's existing testing setup. Do not claim a feature works if it has not been tested.
 
----
+## 13. AI Working Procedure
 
-End of AGENTS.md
+Before starting a task:
+
+1. Read this `AGENTS.md`.
+2. Read `RULES.md` and relevant documentation.
+3. Inspect the existing project structure.
+4. Understand the requested feature.
+5. Identify the files that need to be changed.
+6. Explain the implementation plan for significant changes.
+
+During development:
+
+- Work only within the requested scope.
+- Explain important implementation decisions.
+- Preserve existing code and project conventions.
+- Ask for clarification when requirements are ambiguous.
+- Do not fabricate test results.
+
+After development:
+
+- Summarize the files changed.
+- Explain what was implemented.
+- List commands or tests executed.
+- Report errors and remaining tasks.
+- Identify any changes that require team review.
+
+## 14. Important Restrictions
+
+The AI coding agent must not:
+
+- Change the approved technology stack without permission.
+- Invent project requirements.
+- Remove existing features without permission.
+- Delete database tables or records without approval.
+- Modify GitHub branch protection settings.
+- Expose credentials or private information.
+- Commit unfinished or untested code as completed work.
+- Claim that an implementation is finished without verification.
+
+## 15. Main Objective
+
+The main objective is to help the SI CDC UKRI team develop a reliable, secure, maintainable, and well-documented Career Development Center information system.
+
+All implementation decisions must remain consistent with the approved project requirements and the team's development workflow.
