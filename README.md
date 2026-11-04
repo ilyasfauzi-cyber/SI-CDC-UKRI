@@ -1,143 +1,234 @@
-SI CDC UKRI
+# SI CDC UKRI
+### Sistem Informasi Career Development Center Universitas Kebangsaan Republik Indonesia
 
-Sistem Informasi Career Development Center Universitas Kebangsaan Republik Indonesia
+## 1. Tentang Proyek
 
-1. Deskripsi Proyek
+SI CDC UKRI merupakan sistem informasi Career Development Center yang dikembangkan untuk mendukung pengelolaan informasi karier, peluang kerja, kerja sama dengan dunia usaha dan dunia industri (DUDI), serta pelacakan alumni di lingkungan Universitas Kebangsaan Republik Indonesia.
 
-SI CDC UKRI merupakan sistem informasi berbasis web yang dikembangkan untuk mendukung layanan Career Development Center (CDC) Universitas Kebangsaan Republik Indonesia.
+Sistem ini bertujuan membantu mahasiswa dan alumni memperoleh informasi peluang karier, mempermudah perusahaan dalam menyampaikan lowongan pekerjaan, serta mendukung pengelolaan dan pemantauan data karier oleh pihak universitas.
 
-Sistem ini bertujuan menghubungkan mahasiswa, alumni, pihak universitas, dan Dunia Usaha Dunia Industri (DUDI) melalui layanan pengelolaan profil karier, portofolio, informasi lowongan kerja, kemitraan industri, lamaran pekerjaan, serta tracer study alumni.
+Proyek ini dikembangkan sebagai bagian dari kegiatan pengembangan sistem informasi oleh tim SI CDC UKRI.
 
-2. Tujuan Pengembangan
+## 2. Tujuan Proyek
 
-* Mempermudah mahasiswa dan alumni dalam mengelola profil serta portofolio karier.
-* Menyediakan informasi lowongan kerja dan magang.
-* Memfasilitasi kerja sama antara universitas dengan mitra DUDI.
-* Mempermudah proses verifikasi data dan lowongan.
-* Menyediakan informasi penelusuran alumni melalui tracer study.
-* Membantu pihak universitas dalam memantau perkembangan karier dan keterserapan alumni.
+- Mempermudah mahasiswa dan alumni dalam memperoleh informasi lowongan pekerjaan.
+- Menyediakan wadah pengelolaan profil dan portofolio mahasiswa serta alumni.
+- Memfasilitasi kerja sama antara universitas dengan dunia usaha dan dunia industri.
+- Membantu pengelolaan data tracer study alumni.
+- Menyediakan informasi dan laporan terkait perkembangan karier alumni.
 
-3. Aktor Sistem
+## 3. Modul Utama Sistem
 
-Sistem memiliki lima aktor utama:
+### A. Talent Profile & Portfolio
+Modul untuk mengelola profil, informasi pendidikan, keterampilan, pengalaman, dan portofolio mahasiswa maupun alumni.
 
-Aktor	Hak Akses dan Tanggung Jawab
-Super Admin	Mengelola akun admin, role, konfigurasi sistem, dan log aktivitas.
-Admin CDC	Mengelola data mitra, memverifikasi lowongan dan portofolio, serta mengakses laporan.
-Perwakilan DUDI	Mengelola profil perusahaan, mempublikasikan lowongan, dan meninjau lamaran.
-Mahasiswa/Alumni	Mengelola profil, portofolio, CV, melamar pekerjaan, dan mengisi tracer study.
-Pimpinan Universitas	Melihat dashboard analitik dan laporan tracer study.
+### B. Job Vacancies & DUDI Partnerships
+Modul untuk mengelola informasi lowongan pekerjaan dan hubungan kerja sama dengan perusahaan atau dunia usaha dan dunia industri.
 
-4. Modul dan Fitur Utama
+### C. Analytics & Tracer Study
+Modul untuk mengelola data tracer study serta menyajikan informasi dan analisis perkembangan karier alumni.
 
-Pengembangan sistem dibagi menjadi tiga modul utama:
+## 4. Pengguna Sistem
 
-A. Profil dan Portofolio Talenta
+Sistem dirancang untuk mendukung lima jenis pengguna:
 
-* Pengelolaan profil mahasiswa dan alumni.
-* Pengelolaan sertifikat, pelatihan, seminar, organisasi, dan pengalaman kerja.
-* Verifikasi data portofolio.
-* Pembuatan dan pengunduhan CV digital.
+| Pengguna | Hak Akses Umum |
+|---|---|
+| Super Admin | Pengelolaan dan pengaturan keseluruhan sistem |
+| Admin CDC | Pengelolaan layanan Career Development Center |
+| DUDI Representative | Pengelolaan informasi perusahaan dan lowongan pekerjaan |
+| Student / Alumni | Pengelolaan profil dan akses informasi karier |
+| University Leadership | Melihat informasi, analisis, dan laporan |
 
-B. Lowongan dan Kemitraan DUDI
+Hak akses detail akan disesuaikan dengan kebutuhan sistem yang telah dianalisis.
 
-* Pengelolaan data mitra industri.
-* Registrasi dan verifikasi mitra DUDI.
-* Publikasi dan verifikasi lowongan kerja atau magang.
-* Pencarian dan pengajuan lamaran pekerjaan.
-* Pelacakan status lamaran.
-* Promosi talenta mahasiswa dan alumni.
+## 5. Teknologi yang Digunakan
 
-C. Analitik dan Tracer Study
+| Komponen | Teknologi |
+|---|---|
+| Backend | Laravel (PHP) |
+| Frontend | Blade |
+| CSS Framework | Tailwind CSS |
+| Database | MySQL |
+| Local Development | Laragon |
+| Version Control | Git |
+| Repository | GitHub |
 
-* Pengisian kuesioner tracer study alumni.
-* Pengelolaan data hasil tracer study.
-* Dashboard analitik keterserapan alumni.
-* Laporan untuk Admin CDC dan pimpinan universitas.
+## 6. Anggota Tim
 
-5. Teknologi yang Digunakan
+| No. | Nama | Username GitHub | Peran |
+|---|---|---|---|
+| 1 | Muhammad Ilyas Fauzi | [ilyasfauzi-cyber](https://github.com/ilyasfauzi-cyber) | Project Leader / PM |
+| 2 | Aldy Ramadani | [aldyrmdny-lab](https://github.com/aldyrmdny-lab) | System Analyst |
+| 3 | Naufal Al Farros | [naufalalfarros](https://github.com/naufalalfarros) | Backend Developer |
+| 4 | Muhammad Abdul Aziz | [mhmmdabdulazis05-tech](https://github.com/mhmmdabdulazis05-tech) | Backend Developer |
+| 5 | Gilang Bungsu Putra Anugrah | [gilanganugrah08](https://github.com/gilanganugrah08) | Frontend Developer |
+| 6 | Yunita Nur'aini | [yunita-nrn](https://github.com/yunita-nrn) | QA & Documentation |
 
-Komponen	Teknologi
-Backend	Laravel (PHP)
-Frontend	Blade
-CSS Framework	Tailwind CSS
-Database	MySQL
-Local Development Server	Laragon
-Version Control	Git
-Repository	GitHub
+## 7. Persyaratan Instalasi
 
-6. Metodologi Pengembangan
+Sebelum menjalankan proyek, pastikan perangkat telah memiliki:
 
-Pengembangan proyek menggunakan pendekatan Waterfall sesuai Project Plan, dengan tahapan:
+- Laragon.
+- PHP dengan versi yang sesuai dengan kebutuhan Laravel proyek.
+- Composer.
+- Node.js dan npm.
+- MySQL.
+- Git.
+- Visual Studio Code atau editor kode lainnya.
 
-1. Inisiasi dan perencanaan proyek.
-2. Analisis kebutuhan sistem.
-3. Perancangan sistem.
-4. Implementasi dan pengembangan.
-5. Pengujian dan evaluasi.
-6. Deployment dan penyelesaian proyek.
+## 8. Cara Instalasi dan Menjalankan Proyek
 
-7. Struktur Repository
+### A. Clone Repository
 
-SI-CDC-UKRI/
-├── README.md
-├── AGENTS.md
-├── CLAUDE.md
-├── RULES.md
-├── docs/
-│   ├── KAK.docx
-│   ├── PROJECT-PLAN.docx
-│   ├── SRS.docx
-│   ├── GANTT-CHART.xlsx
-│   ├── analysis/
-│   ├── design/
-│   └── testing/
-├── app/
-├── database/
-├── resources/
-├── routes/
-├── public/
-├── tests/
-└── progress/
+Buka terminal atau Git Bash, kemudian jalankan:
 
-Catatan: Struktur direktori aplikasi akan mengikuti struktur bawaan Laravel setelah proses instalasi.
+```bash
+git clone https://github.com/ilyasfauzi-cyber/SI-CDC-UKRI.git
+```
 
-8. Status Pengembangan
+Masuk ke direktori proyek:
 
-Proyek berada pada tahap persiapan repository dan pengembangan awal.
+```bash
+cd SI-CDC-UKRI
+```
 
-Tahapan	Status
-Penyusunan KAK	Selesai
-Project Charter dan Project Plan	Selesai
-Penyusunan WBS	Selesai
-Penyusunan SRS	Selesai
-Gantt Chart	Selesai
-Persiapan Repository GitHub	Dalam Proses
-Analisis dan Desain Sistem	Belum Dimulai
-Implementasi Sistem	Belum Dimulai
-Pengujian Sistem	Belum Dimulai
-Deployment	Belum Dimulai
+### B. Install Dependency
 
-Status akan diperbarui mengikuti perkembangan pengerjaan proyek.
+Install dependency PHP:
 
-9. Dokumentasi Proyek
+```bash
+composer install
+```
 
-Dokumen perencanaan dan pengembangan sistem disimpan di dalam direktori docs/, meliputi:
+Install dependency frontend:
 
-* Kerangka Acuan Kerja (KAK).
-* Project Charter dan Project Plan.
-* Work Breakdown Structure (WBS).
-* Sprint Backlog.
-* Gantt Chart.
-* Software Requirements Specification (SRS).
-* Dokumentasi desain dan pengujian sistem.
+```bash
+npm install
+```
 
-10. Tim Pengembang
+### C. Konfigurasi Environment
 
-Proyek ini dikembangkan sebagai bagian dari kegiatan akademik Universitas Kebangsaan Republik Indonesia.
+Salin file konfigurasi:
 
-⸻
+```bash
+cp .env.example .env
+```
 
-SI CDC UKRI
-Sistem Informasi Career Development Center
+Jika menggunakan Command Prompt Windows:
+
+```cmd
+copy .env.example .env
+```
+
+Buat application key:
+
+```bash
+php artisan key:generate
+```
+
+### D. Konfigurasi Database
+
+1. Jalankan MySQL melalui Laragon.
+2. Buka phpMyAdmin atau database manager.
+3. Buat database dengan nama:
+
+```text
+si_cdc_ukri
+```
+
+4. Sesuaikan konfigurasi database di file `.env`:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=si_cdc_ukri
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Sesuaikan username dan password dengan konfigurasi MySQL masing-masing.
+
+### E. Jalankan Migration
+
+Setelah database dikonfigurasi dan migration tersedia:
+
+```bash
+php artisan migrate
+```
+
+Jika proyek sudah memiliki seeder yang disiapkan untuk lingkungan pengembangan, jalankan:
+
+```bash
+php artisan db:seed
+```
+
+### F. Jalankan Aplikasi
+
+Jalankan server Laravel:
+
+```bash
+php artisan serve
+```
+
+Jalankan Vite untuk pengembangan frontend:
+
+```bash
+npm run dev
+```
+
+Buka aplikasi melalui browser:
+
+```text
+http://127.0.0.1:8000
+```
+
+## 9. Alur Kolaborasi GitHub
+
+Proyek menggunakan tiga jenis branch:
+
+| Branch | Fungsi |
+|---|---|
+| `main` | Versi aplikasi yang stabil |
+| `develop` | Integrasi pekerjaan seluruh anggota |
+| `feature/*` | Pengembangan fitur tertentu |
+
+Alur kerja:
+
+1. Anggota mengambil tugas melalui GitHub Issues.
+2. Membuat branch fitur dari `develop`.
+3. Melakukan pengembangan sesuai tanggung jawab.
+4. Melakukan commit dan push ke GitHub.
+5. Mengajukan Pull Request ke `develop`.
+6. Melakukan pemeriksaan dan pengujian.
+7. PM mengatur integrasi dan rilis ke `main`.
+
+Seluruh anggota wajib mengikuti ketentuan dalam file `RULES.md`.
+
+## 10. Dokumentasi Proyek
+
+Dokumentasi proyek mencakup:
+
+- Kerangka Acuan Kerja (KAK).
+- Project Plan.
+- Software Requirements Specification (SRS).
+- Work Breakdown Structure (WBS).
+- Gantt Chart.
+- Dokumentasi analisis dan desain sistem.
+- Dokumentasi pengujian aplikasi.
+
+Dokumentasi akan diperbarui mengikuti perkembangan proyek.
+
+## 11. Status Pengembangan
+
+<em>Project Status: In Development</em>
+
+Proyek SI CDC UKRI masih dalam tahap pengembangan. Fitur dan dokumentasi akan diperbarui secara bertahap sesuai perencanaan dan hasil pekerjaan tim.
+
+---
+
+**SI CDC UKRI**  
 Universitas Kebangsaan Republik Indonesia
+
+Repository: https://github.com/ilyasfauzi-cyber/SI-CDC-UKRI.git
