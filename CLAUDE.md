@@ -1,120 +1,93 @@
 # CLAUDE.md
-# Claude Code Project Configuration — SI CDC UKRI
+# SI CDC UKRI - Claude Code Instructions
 
-## 1. Project Overview
+## 1. Project Information
 
-Project ini adalah Sistem Informasi Career Development Center (SI CDC) Universitas Kebangsaan Republik Indonesia.
+**Project:** Sistem Informasi Career Development Center (SI CDC UKRI)  
+**Institution:** Universitas Kebangsaan Republik Indonesia  
+**Repository:** https://github.com/ilyasfauzi-cyber/SI-CDC-UKRI
 
-Sistem dikembangkan untuk membantu mahasiswa, alumni, Admin CDC, mitra DUDI, dan pimpinan universitas dalam layanan pengembangan karier, pengelolaan portofolio, lowongan pekerjaan, lamaran, serta tracer study.
+**Technology Stack:**
+- Backend: Laravel (PHP)
+- Frontend: Blade
+- CSS Framework: Tailwind CSS
+- Database: MySQL
+- Local Development: Laragon
 
 ## 2. Mandatory Instructions
 
-Sebelum melakukan pekerjaan apa pun, baca dan ikuti seluruh instruksi dalam:
+Before performing any development task, you MUST read and follow:
 
-`@AGENTS.md`
+1. `AGENTS.md` — AI coding guidelines and project development standards.
+2. `RULES.md` — Team collaboration, Git workflow, commit, and Pull Request rules.
+3. `README.md` — Project overview, technology stack, and setup instructions.
 
-File tersebut merupakan pedoman utama pengembangan proyek.
+These files are the primary references for project development.
 
-Jika instruksi dalam file ini berbeda dengan AGENTS.md, ikuti AGENTS.md dan laporkan perbedaannya.
+## 3. Project Documentation
 
-## 3. Technology Stack
+Before implementing features, inspect the available project documentation, especially:
 
-Gunakan teknologi yang telah ditetapkan:
+- KAK
+- Software Requirements Specification (SRS)
+- Project Plan
+- Gantt Chart
 
-- Laravel (PHP) sebagai backend.
-- Blade sebagai frontend templating.
-- Tailwind CSS sebagai CSS framework.
-- MySQL sebagai database.
-- Laragon sebagai lingkungan pengembangan lokal.
+Use approved project documents as the source of functional requirements.
 
-Jangan mengganti teknologi tanpa persetujuan pemilik proyek.
+If requirements conflict or are unclear, explain the issue and ask for clarification before making major changes.
 
-## 4. Project Documentation
+## 4. Development Rules
 
-Sebelum mengimplementasikan fitur, periksa dokumentasi yang relevan di direktori `docs/`.
+- Inspect the existing codebase before modifying files.
+- Follow the existing Laravel architecture and coding conventions.
+- Use Blade and Tailwind CSS for frontend development.
+- Use MySQL for database operations.
+- Maintain consistent UI and application structure.
+- Use migrations for database structure changes.
+- Apply authentication, validation, and authorization appropriately.
+- Do not introduce unnecessary dependencies.
+- Do not remove existing functionality without approval.
+- Do not invent features outside approved requirements.
 
-Dokumen utama:
+## 5. Team Collaboration
 
-- KAK: ruang lingkup dan tujuan sistem.
-- SRS: kebutuhan fungsional dan nonfungsional.
-- Project Plan: tahapan dan pembagian pekerjaan.
-- Gantt Chart: jadwal proyek.
+Follow the Git workflow defined in `RULES.md`.
 
-Jangan mengarang kebutuhan yang tidak tercantum dalam dokumentasi.
+- `main`: Stable application version.
+- `develop`: Integration branch.
+- `feature/*`: Feature development branches.
 
-## 5. Coding Standards
+Do not directly push to shared branches or perform Git operations that modify shared history without explicit authorization.
 
-- Gunakan struktur dan konvensi bawaan Laravel.
-- Gunakan MVC dengan pemisahan tanggung jawab yang jelas.
-- Gunakan Laravel Migration untuk perubahan database.
-- Gunakan Eloquent ORM.
-- Terapkan validasi pada input pengguna.
-- Gunakan middleware untuk pembatasan hak akses.
-- Buat kode modular dan mudah dipelihara.
-- Hindari duplikasi kode.
-- Gunakan Blade Components untuk elemen UI yang digunakan berulang.
-- Gunakan Tailwind CSS secara konsisten.
+## 6. Working Procedure
 
-## 6. Development Workflow
+For every development task:
 
-Untuk setiap pekerjaan:
+1. Understand the user's requested task.
+2. Read the relevant project instructions and documentation.
+3. Inspect existing files and implementation.
+4. Explain the plan before significant changes.
+5. Implement only the requested scope.
+6. Run relevant tests and checks.
+7. Report modified files and test results.
+8. Clearly explain any remaining issues.
 
-1. Periksa kondisi repository terlebih dahulu.
-2. Baca instruksi dan dokumentasi terkait.
-3. Pahami kebutuhan pekerjaan.
-4. Periksa GitHub Issue jika tersedia.
-5. Jelaskan rencana implementasi.
-6. Implementasikan kode sesuai ruang lingkup.
-7. Jalankan pengujian yang relevan.
-8. Periksa kembali perubahan.
-9. Laporkan hasil pekerjaan.
+Do not claim that a feature works unless it has been verified.
 
-Jangan mengubah banyak bagian sistem yang tidak berkaitan dengan pekerjaan.
+## 7. Important Restrictions
 
-## 7. Database and Security
+Never:
 
-- Gunakan MySQL.
-- Pastikan relasi database konsisten.
-- Jangan menyimpan password dalam bentuk teks biasa.
-- Terapkan autentikasi dan RBAC.
-- Lindungi data pribadi mahasiswa dan alumni.
-- Terapkan mekanisme consent sebelum data dibagikan kepada mitra DUDI.
-- Jangan menampilkan data yang tidak sesuai dengan hak akses pengguna.
-- Jangan menyimpan credential atau secret di repository.
+- Expose `.env`, passwords, API keys, or tokens.
+- Perform destructive database operations without approval.
+- Change the approved technology stack without permission.
+- Change project requirements without approval.
+- Delete existing project files without understanding their purpose.
+- Commit or push changes without authorization.
 
-## 8. User Interface
+## 8. Main Objective
 
-Buat antarmuka yang:
+Help the SI CDC UKRI development team build a secure, reliable, maintainable, and well-documented Career Development Center information system.
 
-- Profesional dan konsisten.
-- Responsif untuk desktop dan mobile.
-- Mudah digunakan oleh setiap aktor.
-- Memiliki navigasi sesuai role.
-- Memiliki notifikasi untuk proses berhasil maupun gagal.
-
-## 9. Testing
-
-Setiap fitur harus diuji sesuai kebutuhan.
-
-Jangan menyatakan pekerjaan selesai jika pengujian belum dilakukan.
-
-Jika pengujian gagal, jelaskan penyebab dan langkah perbaikannya.
-
-## 10. Communication
-
-Gunakan Bahasa Indonesia untuk penjelasan kepada pemilik proyek.
-
-Ketika menyelesaikan pekerjaan, berikan laporan yang mencakup:
-
-- Ringkasan pekerjaan.
-- File yang dibuat atau diubah.
-- Fitur yang berhasil diimplementasikan.
-- Pengujian yang telah dilakukan.
-- Hasil pengujian.
-- Kendala atau pekerjaan yang belum selesai.
-
-Jika ada informasi yang belum jelas, tanyakan terlebih dahulu daripada membuat asumsi sendiri.
-
----
-
-End of CLAUDE.md
+Always prioritize project requirements, existing code conventions, and team collaboration rules.
