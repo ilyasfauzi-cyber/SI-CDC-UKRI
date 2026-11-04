@@ -1,194 +1,267 @@
 # RULES.md
-# PROJECT DEVELOPMENT RULES — SI CDC UKRI
+# ATURAN KERJA TIM SI CDC UKRI
 
-## 1. General Rules
+## 1. Informasi Proyek
 
-1. Seluruh anggota tim wajib memahami tujuan dan ruang lingkup proyek SI CDC UKRI.
-2. Setiap pekerjaan harus mengacu pada dokumen KAK, SRS, Project Plan, dan Gantt Chart.
-3. Setiap perubahan kebutuhan sistem harus didiskusikan dan disetujui oleh tim.
-4. Setiap anggota bertanggung jawab terhadap tugas yang diberikan.
-5. Dilarang menghapus atau mengubah pekerjaan anggota lain tanpa koordinasi.
-6. Komunikasi dan perkembangan pekerjaan harus dicatat dengan jelas.
+**Nama Proyek:** Sistem Informasi Career Development Center (SI CDC UKRI)  
+**Repository:** https://github.com/ilyasfauzi-cyber/SI-CDC-UKRI  
+**Teknologi:** Laravel (PHP), Blade, Tailwind CSS, MySQL  
+**Local Development:** Laragon  
+**Version Control:** Git dan GitHub
 
-## 2. Technology Rules
+Dokumen ini berisi aturan kerja yang wajib diikuti seluruh anggota tim selama pengembangan SI CDC UKRI.
 
-Teknologi yang digunakan dalam proyek:
+## 2. Struktur Tim dan Tanggung Jawab
 
-- Backend: Laravel (PHP).
-- Frontend: Blade.
-- CSS Framework: Tailwind CSS.
-- Database: MySQL.
-- Local Development: Laragon.
-- Version Control: Git.
-- Repository: GitHub.
+| Nama | Username GitHub | Peran |
+|---|---|---|
+| Muhammad Ilyas Fauzi | ilyasfauzi-cyber | Project Leader / PM |
+| Aldy Ramadani | aldyrmdny-lab | System Analyst |
+| Naufal Al Farros | naufalalfarros | Backend Developer |
+| Muhammad Abdul Aziz | mhmmdabdulazis05-tech | Backend Developer |
+| Gilang Bungsu Putra Anugrah | gilanganugrah08 | Frontend Developer |
+| Yunita Nur'aini | yunita-nrn | QA & Documentation |
 
-Pergantian teknologi harus mendapatkan persetujuan tim dan disesuaikan dengan dokumentasi proyek.
+### Tanggung Jawab
 
-## 3. GitHub Repository Rules
+**Project Leader / PM — Muhammad Ilyas Fauzi**
+- Mengatur pembagian pekerjaan dan prioritas.
+- Mengelola GitHub Issues dan Milestones.
+- Memantau perkembangan proyek.
+- Mengawasi integrasi pekerjaan tim.
+- Menyetujui Pull Request menuju branch utama.
 
-1. Branch utama menggunakan nama `main`.
-2. Jangan mengerjakan fitur langsung pada branch `main` jika pekerjaan dilakukan melalui branch fitur.
-3. Setiap fitur atau perbaikan besar sebaiknya menggunakan branch tersendiri.
-4. Setiap perubahan harus memiliki commit message yang jelas.
-5. Gunakan GitHub Issues untuk mencatat dan melacak pekerjaan.
-6. Hubungkan Pull Request dengan Issue terkait.
-7. Perubahan penting harus diperiksa sebelum digabungkan ke branch utama.
+**System Analyst — Aldy Ramadani**
+- Menganalisis kebutuhan sistem.
+- Menyusun alur proses dan kebutuhan fungsional.
+- Menyusun dokumentasi analisis sistem.
+- Berkoordinasi dengan developer mengenai kebutuhan fitur.
 
-### Branch Naming Convention
+**Backend Developer — Naufal Al Farros dan Muhammad Abdul Aziz**
+- Mengembangkan backend menggunakan Laravel.
+- Mengelola database MySQL dan migration.
+- Mengembangkan autentikasi, validasi, dan logika bisnis.
+- Mengintegrasikan backend dengan frontend.
 
-Gunakan format:
+**Frontend Developer — Gilang Bungsu Putra Anugrah**
+- Mengembangkan antarmuka menggunakan Blade dan Tailwind CSS.
+- Membuat halaman dan komponen antarmuka.
+- Memastikan tampilan responsif.
+- Mengintegrasikan tampilan dengan data dari backend.
 
-- `feature/nama-fitur`
-- `fix/nama-perbaikan`
-- `docs/nama-dokumentasi`
-- `test/nama-pengujian`
+**QA & Documentation — Yunita Nur'aini**
+- Menyusun skenario dan test case.
+- Melakukan pengujian fitur.
+- Mencatat bug dan hasil pengujian.
+- Memelihara dokumentasi proyek.
+- Melaporkan hasil pengujian kepada PM dan developer.
 
-Contoh:
+## 3. Aturan Branch Git
 
-- `feature/user-authentication`
+Repository menggunakan tiga jenis branch utama:
+
+| Branch | Fungsi |
+|---|---|
+| `main` | Versi aplikasi yang stabil |
+| `develop` | Integrasi seluruh pekerjaan tim |
+| `feature/*` | Pengembangan fitur tertentu |
+
+### Ketentuan
+
+1. Branch `main` tidak boleh digunakan untuk pekerjaan harian.
+2. Seluruh branch fitur dibuat dari `develop`.
+3. Setiap anggota mengerjakan tugas melalui branch masing-masing.
+4. Setelah selesai, perubahan diajukan melalui Pull Request menuju `develop`.
+5. Branch `main` hanya diperbarui setelah integrasi dan pengujian dinyatakan layak oleh PM.
+6. Dilarang melakukan force push pada branch bersama.
+
+### Contoh Nama Branch
+
+- `feature/authentication`
 - `feature/student-profile`
-- `fix/application-validation`
+- `feature/job-vacancies`
+- `feature/dudi-partnership`
+- `feature/dashboard`
+- `feature/tracer-study`
+- `fix/login-validation`
 - `docs/project-documentation`
 
-## 4. Commit Message Rules
+## 4. Alur Kerja GitHub
 
-Gunakan format:
+Urutan kerja setiap anggota:
 
-`type: description`
+1. Ambil pekerjaan melalui GitHub Issues.
+2. Pastikan tugas dan ruang lingkup pekerjaan dipahami.
+3. Ambil perubahan terbaru dari `develop`.
+4. Buat branch baru dari `develop`.
+5. Kerjakan fitur sesuai tanggung jawab.
+6. Lakukan pengujian sebelum melakukan push.
+7. Commit dan push perubahan ke GitHub.
+8. Buat Pull Request dari branch fitur menuju `develop`.
+9. Cantumkan deskripsi pekerjaan dan hasil pengujian.
+10. Tunggu pemeriksaan dan persetujuan sebelum perubahan digabungkan.
+
+### Contoh Perintah Git
+
+```bash
+git checkout develop
+git pull origin develop
+
+git checkout -b feature/nama-fitur
+
+# Kerjakan perubahan kode
+
+git add .
+git commit -m "feat(auth): add login validation"
+git push -u origin feature/nama-fitur
+```
+
+Setelah itu, buat Pull Request melalui GitHub.
+
+## 5. Aturan Commit
+
+Tim menggunakan format Conventional Commits:
+
+```text
+type(scope): deskripsi perubahan
+```
 
 Jenis commit:
 
 | Type | Penggunaan |
 |---|---|
-| feat | Menambahkan fitur |
-| fix | Memperbaiki bug |
-| docs | Mengubah dokumentasi |
-| style | Mengubah tampilan atau format kode tanpa mengubah logika |
-| refactor | Merapikan kode |
-| test | Menambahkan atau memperbaiki pengujian |
-| chore | Konfigurasi dan pemeliharaan proyek |
+| `feat` | Menambahkan fitur baru |
+| `fix` | Memperbaiki bug |
+| `docs` | Mengubah dokumentasi |
+| `style` | Perubahan format atau tampilan kode tanpa mengubah logika |
+| `refactor` | Merapikan struktur kode |
+| `test` | Menambahkan atau memperbaiki pengujian |
+| `chore` | Pemeliharaan proyek dan konfigurasi |
 
 Contoh:
 
-- `feat: add authentication system`
-- `feat: add student profile management`
-- `fix: correct job application status`
-- `docs: update project documentation`
-- `test: add user authentication tests`
+```text
+feat(auth): add login feature
+feat(student): add student profile page
+fix(auth): fix login validation
+docs(readme): update installation guide
+test(job): add job vacancy test
+```
 
-## 5. Coding Standards
+Gunakan pesan commit yang jelas dan sesuai perubahan sebenarnya.
 
-1. Gunakan struktur kode Laravel yang konsisten.
-2. Pisahkan tanggung jawab Controller, Model, View, dan Service jika diperlukan.
-3. Gunakan penamaan class dan method yang mudah dipahami.
-4. Hindari kode duplikat.
-5. Gunakan Laravel Migration untuk perubahan struktur database.
-6. Gunakan validasi Laravel untuk setiap input.
-7. Gunakan Eloquent ORM untuk interaksi database.
-8. Jangan menuliskan query atau logika bisnis secara sembarangan di Blade.
-9. Gunakan komponen Blade yang dapat digunakan kembali jika sesuai.
-10. Pastikan kode mudah dibaca dan dipelihara.
+## 6. Aturan Pull Request
 
-## 6. Database Rules
+Setiap Pull Request wajib mencantumkan:
 
-1. Database utama menggunakan MySQL.
-2. Setiap perubahan struktur tabel harus menggunakan Migration.
-3. Gunakan relasi dan foreign key sesuai kebutuhan.
-4. Gunakan Seeder untuk data awal atau data pengujian.
-5. Jangan menghapus data penting tanpa persetujuan.
-6. Gunakan nama tabel dan kolom secara konsisten.
-7. Pastikan integritas data tetap terjaga.
-8. Jangan menyimpan password dalam bentuk teks biasa.
+- Judul perubahan yang jelas.
+- Ringkasan pekerjaan.
+- Nomor atau tautan GitHub Issue.
+- Daftar file atau bagian yang diubah.
+- Langkah pengujian.
+- Hasil pengujian.
+- Screenshot apabila perubahan berkaitan dengan antarmuka.
 
-## 7. Security Rules
+### Ketentuan Review
 
-1. Setiap halaman harus memeriksa autentikasi dan hak akses.
-2. Terapkan Role-Based Access Control (RBAC).
-3. Jangan memberikan akses melebihi kewenangan role pengguna.
-4. Validasi seluruh input dari pengguna.
-5. Jangan menampilkan informasi sensitif kepada pihak yang tidak berwenang.
-6. Jangan menyimpan password, API key, token, atau credential di repository.
-7. Gunakan file `.env` untuk konfigurasi rahasia.
-8. Jangan mengunggah file `.env` ke GitHub.
-9. Terapkan perlindungan CSRF, XSS, dan SQL Injection.
-10. Data pribadi mahasiswa dan alumni hanya boleh dibagikan sesuai persetujuan dan kewenangan yang berlaku.
+1. Pull Request menuju `develop` harus diperiksa sebelum di-merge.
+2. Minimal satu anggota lain melakukan pemeriksaan.
+3. PM bertanggung jawab memastikan integrasi pekerjaan.
+4. Perbaiki konflik dan kesalahan sebelum merge.
+5. Jangan menggabungkan kode yang belum diuji.
+6. PM mengatur merge dari `develop` ke `main`.
 
-## 8. UI/UX Rules
+## 7. Aturan Pengembangan Aplikasi
 
-1. Gunakan Tailwind CSS sebagai framework styling.
-2. Tampilan harus responsif untuk desktop dan mobile.
-3. Gunakan desain yang konsisten di seluruh halaman.
-4. Navigasi harus mudah dipahami.
-5. Dashboard harus menyesuaikan role pengguna.
-6. Gunakan notifikasi untuk memberikan informasi keberhasilan atau kegagalan proses.
-7. Form harus memiliki validasi dan pesan kesalahan yang jelas.
+Seluruh anggota wajib mengikuti teknologi yang telah ditentukan:
 
-## 9. Testing Rules
+- Backend: Laravel (PHP).
+- Frontend: Blade dan Tailwind CSS.
+- Database: MySQL.
+- Local Development: Laragon.
 
-Setiap fitur wajib diuji sebelum dinyatakan selesai.
+Ketentuan pengembangan:
 
-Pengujian minimal meliputi:
+1. Gunakan struktur folder dan standar Laravel yang konsisten.
+2. Gunakan migration untuk perubahan struktur database.
+3. Gunakan seeder untuk data awal atau data pengujian.
+4. Hindari menulis kode yang sama berulang kali jika dapat dibuat menjadi komponen atau fungsi yang dapat digunakan kembali.
+5. Jangan mengubah fitur atau kebutuhan sistem tanpa koordinasi dengan PM dan System Analyst.
+6. Pastikan perubahan tidak merusak fitur yang sudah berjalan.
 
-- Pengujian autentikasi.
-- Pengujian hak akses pengguna.
-- Pengujian validasi form.
-- Pengujian proses utama fitur.
-- Pengujian penyimpanan dan pengambilan data.
-- Pengujian integrasi antarfitur jika diperlukan.
+## 8. Aturan Pengujian dan Dokumentasi
 
-Bug yang ditemukan harus dicatat melalui GitHub Issues.
+1. Setiap developer wajib menguji kode sebelum mengajukan Pull Request.
+2. QA bertugas memeriksa fitur berdasarkan kebutuhan sistem.
+3. Setiap bug harus dicatat dan dilaporkan melalui GitHub Issues.
+4. Bug yang ditemukan harus memiliki deskripsi dan langkah reproduksi.
+5. Dokumentasi harus diperbarui apabila terdapat perubahan fitur, konfigurasi, atau alur sistem.
+6. Hasil pengujian harus dapat dipahami dan diperiksa anggota lain.
 
-Jangan menyatakan pengujian berhasil jika belum benar-benar dijalankan.
+## 9. Aturan Penggunaan AI
 
-## 10. GitHub Issues and Pull Request Rules
+AI dapat digunakan untuk membantu proses pengembangan, seperti:
 
-1. Setiap pekerjaan harus memiliki Issue jika sistem pelacakan pekerjaan sudah digunakan.
-2. Issue harus memiliki judul dan deskripsi yang jelas.
-3. Setiap Issue harus memiliki kategori atau label yang sesuai.
-4. Issue yang selesai harus diperbarui statusnya.
-5. Pull Request harus menjelaskan perubahan yang dilakukan.
-6. Pull Request harus menyertakan referensi Issue terkait.
-7. Periksa konflik sebelum melakukan merge.
-8. Jangan melakukan merge perubahan yang belum diperiksa.
+- Membantu menulis dan memahami kode.
+- Membantu mencari penyebab error.
+- Membantu menyusun dokumentasi.
+- Membantu membuat test case.
+- Membantu memberikan saran perbaikan kode.
 
-## 11. Team Collaboration Rules
+Namun, setiap anggota wajib:
 
-1. Setiap anggota wajib memperbarui progres pekerjaan.
-2. Jika mengalami kendala, segera komunikasikan kepada tim.
-3. Hindari mengerjakan file yang sama secara bersamaan tanpa koordinasi.
-4. Lakukan sinkronisasi perubahan sebelum memulai pekerjaan.
-5. Berikan informasi yang jelas ketika menyerahkan pekerjaan kepada anggota lain.
-6. Setiap keputusan penting harus didokumentasikan.
+1. Memahami kode yang dihasilkan AI sebelum menggunakannya.
+2. Memeriksa kesesuaian kode dengan kebutuhan proyek.
+3. Menguji kode sebelum melakukan commit.
+4. Tidak menyerahkan hasil AI tanpa pemeriksaan.
+5. Tidak memasukkan informasi rahasia proyek ke layanan AI yang tidak diizinkan.
 
-## 12. AI Assistant Rules
+## 10. Keamanan Repository
 
-Claude Code dan AI coding assistant lainnya harus:
+Dilarang mengunggah:
 
-1. Membaca `AGENTS.md` dan dokumentasi proyek sebelum mengerjakan tugas.
-2. Mengikuti teknologi yang telah ditentukan.
-3. Tidak membuat fitur di luar ruang lingkup tanpa persetujuan.
-4. Tidak mengubah struktur database secara sembarangan.
-5. Tidak menghapus kode atau file penting tanpa persetujuan.
-6. Menjelaskan rencana sebelum perubahan besar.
-7. Menjalankan pengujian yang relevan setelah implementasi.
-8. Melaporkan file yang dibuat atau diubah.
-9. Melaporkan kendala dan bug yang ditemukan.
-10. Tidak mengklaim pekerjaan selesai jika belum diverifikasi.
+- File `.env`.
+- Password dan kredensial database.
+- API key dan token autentikasi.
+- Private key atau sertifikat rahasia.
+- Informasi pribadi pengguna yang bersifat sensitif.
 
-## 13. Definition of Done
+Gunakan `.env.example` untuk memberikan contoh konfigurasi tanpa menyertakan kredensial asli.
 
-Pekerjaan dapat dinyatakan selesai apabila:
+Pastikan file rahasia sudah tercantum dalam `.gitignore`.
 
-- Kebutuhan pada Issue telah dipenuhi.
-- Implementasi sesuai dokumentasi proyek.
-- Tidak ada error yang diketahui dan belum ditangani.
-- Pengujian yang relevan telah dijalankan.
-- Perubahan telah disimpan ke Git.
-- Dokumentasi diperbarui jika diperlukan.
-- Status Issue telah diperbarui.
+## 11. Pelaporan Progres
+
+Setiap anggota wajib memperbarui progres pekerjaan melalui GitHub Issues atau dokumentasi progres yang disepakati tim.
+
+Informasi progres minimal:
+
+- Nama anggota.
+- Tugas atau Issue yang dikerjakan.
+- Branch yang digunakan.
+- Pekerjaan yang telah diselesaikan.
+- Status pekerjaan.
+- Kendala yang ditemukan.
+
+Status pekerjaan:
+
+- `To Do`
+- `In Progress`
+- `Review`
+- `Done`
+- `Blocked`
+
+Jika mengalami kendala, segera komunikasikan kepada PM agar tidak menghambat pekerjaan anggota lain.
+
+## 12. Prinsip Kerja Tim
+
+1. Komunikasikan perubahan sebelum mengubah bagian pekerjaan anggota lain.
+2. Jangan menghapus atau menimpa pekerjaan anggota lain tanpa persetujuan.
+3. Patuhi pembagian tanggung jawab.
+4. Saling melakukan pemeriksaan kode dan pengujian.
+5. Utamakan kestabilan aplikasi daripada kecepatan menyelesaikan fitur.
+6. Semua anggota bertanggung jawab terhadap kualitas hasil akhir SI CDC UKRI.
 
 ---
 
-**Project:** SI CDC UKRI  
-**Institution:** Universitas Kebangsaan Republik Indonesia  
-**Document:** Project Development Rules
+**Dokumen ini menjadi pedoman kerja seluruh anggota tim SI CDC UKRI selama proses pengembangan proyek.**
